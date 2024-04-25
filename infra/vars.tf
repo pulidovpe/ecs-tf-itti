@@ -78,11 +78,9 @@ variable "az_count" {
 }
 
 variable "availability_zones" {
-  default = [
-    "us-east-1a",
-    "us-east-1d"
-  ]
-  type = "list"
+  description = "List of availability zones for region us-east-1"
+  default     = [ "us-east-1a", "us-east-1d" ]
+  type        = list(string)
 }
 
 #################################
