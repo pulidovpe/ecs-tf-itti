@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "default" {
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
     cached_methods         = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id       = aws_alb.alb.name
+    target_origin_id       = aws_lb.alb.name
     viewer_protocol_policy = "redirect-to-https"
 
     forwarded_values {
@@ -25,8 +25,8 @@ resource "aws_cloudfront_distribution" "default" {
   }
 
   origin {
-    domain_name = aws_alb.alb.dns_name
-    origin_id   = aws_alb.alb.name
+    domain_name = aws_lb.alb.dns_name
+    origin_id   = aws_lb.alb.name
 
     custom_header {
       name  = "X-Custom-Header"

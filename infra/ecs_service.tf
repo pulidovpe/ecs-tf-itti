@@ -12,7 +12,7 @@ resource "aws_ecs_service" "service" {
   launch_type                        = "FARGATE"
 
   load_balancer {
-    target_group_arn = aws_alb_target_group.service_target_group.arn
+    target_group_arn = aws_lb_target_group.service_target_group.arn
     container_name   = var.service_name
     container_port   = var.container_port
   }
