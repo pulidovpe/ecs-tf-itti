@@ -77,6 +77,14 @@ variable "az_count" {
   type        = number
 }
 
+variable "availability_zones" {
+  default = [
+    "us-east-1a",
+    "us-east-1d"
+  ]
+  type = "list"
+}
+
 #################################
 ## ECS variables
 #################################
